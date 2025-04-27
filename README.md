@@ -1,1 +1,1 @@
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&width=435&lines=G%E1%BB%8Di+Vy+l%C3%A0+LonDon+v%C3%AC+Vy+l%C3%A0+c%E1%BB%A7a+Anh+%E2%9D%A4%EF%B8%8F%E2%9D%A4%EF%B8%8F)](https://git.io/typing-svg)
+hello i'm noob coder
