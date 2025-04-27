@@ -1,0 +1,32 @@
+//bai3
+#include <bits/stdc++.h>
+#define int long long
+using namespace std;
+const int N=1e6+9;
+int kt[N];
+void snt(){
+    kt[0]=kt[1]=1;
+    for(int i=2;i*i<=N;i++){
+        if(!kt[i]){
+            for(int j=i*i;j<=N;j+=i){
+                kt[j]=1;
+            }
+        }
+    }
+}
+main()
+{
+    snt();
+    int n,d=0; cin >> n;
+    while(n--){
+        d=0;
+        int a,b; cin >> a >> b;
+        int a1=ceil(sqrt(a));
+        int b1=floor(sqrt(b));
+        for(int i=a1;i<=b1;i++){
+            if(!kt[i])d++;
+        }
+        cout<<d<<'\n';
+    }
+    return 0;
+}
