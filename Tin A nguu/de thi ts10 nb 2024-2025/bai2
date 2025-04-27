@@ -1,0 +1,31 @@
+//bai2
+#include <bits/stdc++.h>
+#define int long long
+using namespace std;
+string do_dai_lon_nhat(string a, string b){
+    int do_dai_a=a.size();
+    int do_dai_b=b.size();
+    if(do_dai_a==do_dai_b)return max(a,b);
+    if(do_dai_a>do_dai_b)return a;
+    if(do_dai_a<do_dai_b)return b;
+}
+main()
+{
+    string s,x,maxx=""; cin >> s;
+    for(int i=0;i<s.size();i++){
+        if(isdigit(s[i])){
+            x+=s[i];
+        }
+        else{
+            if(x!=""){
+                while(x[0]=='0'){
+                    x.erase(0,1);
+                }
+                maxx=do_dai_lon_nhat(maxx,x);
+            }
+            x="";
+        }
+    }
+    cout<<maxx;
+    return 0;
+}
