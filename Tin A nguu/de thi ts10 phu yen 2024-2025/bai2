@@ -1,0 +1,25 @@
+//bai2
+#include <bits/stdc++.h>
+#define int long long
+using namespace std;
+main()
+{
+    int n; cin >> n;
+    string x="";
+    while(n--){
+        map<char,int> m;
+        char luu;
+        int maxx=-2e9;
+        string s; cin >> s;
+        for(int i=0;i<s.size();i++){
+            m[s[i]]++;
+            if(m[s[i]]>maxx){
+                maxx=m[s[i]];
+                luu=s[i];
+            }
+        }
+        x+=luu;
+    }
+    cout<<x;
+    return 0;
+}
