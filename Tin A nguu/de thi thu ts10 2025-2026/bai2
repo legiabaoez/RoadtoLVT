@@ -1,0 +1,25 @@
+//bai2
+#include <bits/stdc++.h>
+#define int long long
+using namespace std;
+int kt(char c){
+    if(c=='u'||c=='e'||c=='o'||c=='a'||c=='i')return 1;
+    else return 0;
+}
+main()
+{
+    int n; string s;
+    cin >> n >> s;
+    int maxx=INT_MIN,d=0;
+    for(int i=0;i<s.size();i++){
+        if(kt(s[i]))d++;
+        else{
+            maxx=max(maxx,d);
+            d=0;
+        }
+    }
+    maxx=max(maxx,d);
+    if(maxx==0)cout<<-1;
+    else cout<<maxx;
+    return 0;
+}
