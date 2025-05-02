@@ -1,0 +1,13 @@
+//bai1
+#include <bits/stdc++.h>
+#define int long long
+using namespace std;
+
+main()
+{
+    int n; cin >> n;
+    int sl=n/3;
+    if(sl%2==0)cout<<sl/2;
+    else cout<<(sl+1)/2;
+    return 0;
+}
