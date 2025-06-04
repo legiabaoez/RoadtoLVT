@@ -1,0 +1,36 @@
+//Bai 2 khoi luong phan tu
+#include <bits/stdc++.h>
+#define int long long
+using namespace std;
+int xauso(string x){
+    int ans=0;
+    for(int i=0;i<x.size();i++){
+        ans=ans*10+(x[i]-'0');
+    }
+    return ans;
+}
+main()
+{
+    freopen("CHEMIS.INP","r",stdin);
+    freopen("CHEMIS.OUT","w",stdout);
+    string s; cin >> s;
+    int dem=0,ans=0,i=0;
+    while(i<s.size()){
+        char c=s[i];
+        i++;
+        string x="";
+        while(i<s.size()&&isdigit(s[i])){
+            x+=s[i];
+            i++;
+        }
+        int x_so;
+        if(x=="")x_so=1;
+        else x_so=xauso(x);
+        if(c=='C')ans+=x_so*12;
+        if(c=='H')ans+=x_so;
+        if(c=='N')ans+=x_so*14;
+        if(c=='O')ans+=x_so*16;
+    }
+    cout<<ans;
+    return 0;
+}
