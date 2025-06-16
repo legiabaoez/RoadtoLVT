@@ -1,0 +1,14 @@
+#include <bits/stdc++.h>
+#define int long long
+using namespace std;
+
+main()
+{
+    int a,b; cin >> a >> b;
+    int r=floor(sqrt(b));
+    int l=ceil(sqrt(a));
+    int do_dai_sole=r-l+1;
+    int s=b-a+1;
+    cout<<s-do_dai_sole;
+    return 0;
+}
