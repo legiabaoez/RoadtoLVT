@@ -1,0 +1,40 @@
+#include <bits/stdc++.h>
+#define int long long
+using namespace std;
+const int MOD=1e9+7;
+int mu(int a, int b) {
+    int kq=1;
+    for(int i=1;i<=b;i++)kq*=a%MOD;
+    return kq%MOD;
+}
+main()
+{
+    int t; cin >> t;
+    while(t--){
+        vector<int> a;
+        map<int,int> dem;
+        map<int,int>::iterator it;
+        int n; cin >> n;
+        for(int i=2;i<=n;i++){
+            int x=i;
+            for(int j=2;j*j<=x;j++){
+                while(x%j==0){
+                    dem[j]++;
+                    x/=j;
+                }
+            }
+            if(x>1)dem[x]++;
+        }
+        for(it=dem.begin();it!=dem.end();it++){
+            int i=it->first;
+            int j=it->second;
+            if(it->second%3==0){
+                int s=mu(i,j);
+                a.push_back(s);
+            }
+        }
+        if(a.empty())cout<<1<<'\n';
+        else cout<<*max_element(a.begin(),a.end())<<'\n';
+    }
+    return 0;
+}
