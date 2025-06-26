@@ -1,0 +1,15 @@
+#include <bits/stdc++.h>
+#define int long long
+using namespace std;
+
+main()
+{
+    int a,b,c,n; cin >> a >> b >> c >> n;
+    int min_quyen=n/(a+b);
+    int mod=n%(a+b);
+    if(mod>a)mod=a;
+    int min_money=min_quyen*a*c;
+    int ans=min_money+mod*c;
+    cout<<ans;
+    return 0;
+}
