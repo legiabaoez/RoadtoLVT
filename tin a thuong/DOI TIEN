@@ -1,0 +1,23 @@
+#include <bits/stdc++.h>
+#define int long long
+using namespace std;
+
+main()
+{
+    int n,i=0; cin >> n;
+    map<int,int> m;
+    map<int,int>::iterator it;
+    int a[]={1,2,5,10,20,50,100};
+    while(n>0){
+        if(i>6) i=0;
+        if(n>=a[i]){
+            n-=a[i];
+            m[a[i]]++;
+        }
+        i++;
+    }
+    for(it=m.begin();it!=m.end();it++){
+        cout<<it->first<<" "<<it->second<<'\n';
+    }
+    return 0;
+}
