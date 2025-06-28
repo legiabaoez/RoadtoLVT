@@ -1,0 +1,23 @@
+#include <bits/stdc++.h>
+#define int long long
+using namespace std;
+main()
+{
+    int n,d=0; cin >> n;
+    vector<int> pre_fix(n+1);
+    for(int i=1;i<=n;i++){
+        pre_fix[i]=pre_fix[i-1]+i;
+    }
+    for(int i=n-1;i>=1;i--){
+        for(int j=i+1;j<=n;j++){
+            int value=pre_fix[j]-pre_fix[i-1];
+            if(value==n){
+                for(int k=i;k<=j;k++)cout<<k<<" ";
+                d++;
+                cout<<'\n';
+            }
+        }
+    }
+    cout<<"Co "<<d<<" cach chia so "<<n;
+    return 0;
+}
