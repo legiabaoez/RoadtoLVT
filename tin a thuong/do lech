@@ -1,0 +1,19 @@
+#include <bits/stdc++.h>
+#define int long long
+using namespace std;
+main()
+{
+    string a,b; cin >> a >> b;
+    int s=0;
+    for(int i=0;i<a.size();i++){
+        char c_a=a[i];
+        char c_b=b[i];
+        int value_a=c_a-'0'; int value_b=c_b-'0';
+        int minn_1=min(value_a,value_b);
+        int maxx=max(value_a,value_b);
+        int minn_2=min(abs(value_a-value_b),10+minn_1-maxx);
+        s+=minn_2;
+    }
+    cout<<s;
+    return 0;
+}
