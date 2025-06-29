@@ -1,0 +1,25 @@
+#include <bits/stdc++.h>
+#define int long long
+using namespace std;
+int sl_uoc(int n){
+    int d=0;
+    for(int i=1;i*i<=n;i++){
+        if(n%i==0){
+            d++;
+            if(i!=n/i){
+                d++;
+            }
+        }
+    }
+    return d;
+}
+main()
+{
+    int t; cin >> t;
+    while(t--){
+        int m, n; cin >> m >> n;
+        int ucln=__gcd(m,n);
+        cout<<sl_uoc(ucln)<<'\n';
+    }
+    return 0;
+}
