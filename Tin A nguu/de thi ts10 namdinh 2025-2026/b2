@@ -1,0 +1,27 @@
+#include <bits/stdc++.h>
+#define int long long
+using namespace std;
+int nt(int x){
+    if(x<2)return 0;
+    for(int i=2;i*i<=x;i++){
+        if(x%i==0)return 0;
+    }
+    return 1;
+}
+main()
+{
+    int x, n, d=0; cin >> x >> n;
+    vector<int> luu;
+    for(int i=1;i<=n;i++){
+        int ucln=__gcd(i,x);
+        if(nt(ucln)==1||ucln==1){
+            luu.push_back(i);
+        }
+
+    }
+    cout<<luu.size()<<'\n';
+    for(int i=0;i<luu.size();i++){
+        cout<<luu[i]<<" ";
+    }
+    return 0;
+}
