@@ -1,25 +1,23 @@
 #include <bits/stdc++.h>
 #define int long long
 using namespace std;
-int sl_uoc(int n){
-    int d=0;
-    for(int i=1;i*i<=n;i++){
-        if(n%i==0){
-            d++;
-            if(i!=n/i){
-                d++;
-            }
+const int N=1e6+9;
+int kt[N];
+void sang_dem_uoc(){
+    for (int i = 1; i < N; i++) {
+        for (int j = i; j < N; j += i) {
+            kt[j]++;
         }
     }
-    return d;
 }
 main()
 {
+    sang_dem_uoc();
     int t; cin >> t;
     while(t--){
         int m, n; cin >> m >> n;
         int ucln=__gcd(m,n);
-        cout<<sl_uoc(ucln)<<'\n';
+        cout<<kt[ucln]<<'\n';
     }
     return 0;
 }
