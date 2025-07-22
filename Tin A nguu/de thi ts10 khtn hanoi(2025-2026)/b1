@@ -1,0 +1,16 @@
+#include <bits/stdc++.h>
+#include <climits>
+#define int long long 
+using namespace std;
+
+main() {
+    int n; cin >> n;
+    int maxx = LLONG_MIN, minn = LLONG_MAX;
+    while(n--){
+        int m, v; cin >> m >> v;
+        maxx = max(maxx, m + v);
+        minn = min(minn, m + v);
+    }
+    cout << maxx - minn;
+    return 0;
+}
